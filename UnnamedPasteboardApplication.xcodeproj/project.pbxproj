@@ -19,6 +19,7 @@
 		921AE8EF17A4562B0046343A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D717A4562B0046343A /* UIKit.framework */; };
 		921AE8F717A4562B0046343A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 921AE8F517A4562B0046343A /* InfoPlist.strings */; };
 		921AE8F917A4562B0046343A /* UnnamedPasteboardApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */; };
+		921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90317A4566F0046343A /* PasteTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		921AE8F417A4562B0046343A /* UnnamedPasteboardApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnnamedPasteboardApplicationTests-Info.plist"; sourceTree = "<group>"; };
 		921AE8F617A4562B0046343A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnnamedPasteboardApplicationTests.m; sourceTree = "<group>"; };
+		921AE90217A4566F0046343A /* PasteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteTableViewController.h; sourceTree = "<group>"; };
+		921AE90317A4566F0046343A /* PasteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				921AE8E317A4562B0046343A /* AppDelegate.m */,
 				921AE8E517A4562B0046343A /* Images.xcassets */,
 				921AE8DA17A4562B0046343A /* Supporting Files */,
+				921AE90217A4566F0046343A /* PasteTableViewController.h */,
+				921AE90317A4566F0046343A /* PasteTableViewController.m */,
 			);
 			path = UnnamedPasteboardApplication;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */,
 				921AE8E417A4562B0046343A /* AppDelegate.m in Sources */,
 				921AE8E017A4562B0046343A /* main.m in Sources */,
 			);
