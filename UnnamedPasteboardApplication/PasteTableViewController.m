@@ -7,6 +7,7 @@
 //
 
 #import "PasteTableViewController.h"
+#import "PasteDetailView.h"
 
 @implementation PasteTableViewController
 
@@ -15,7 +16,7 @@
     if (self) {
         self.navigationItem.title = @"Clipboard";
     }
-    return [self initWithStyle:UITableViewStylePlain];
+    return [self initWithStyle:UITableViewStyleGrouped];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -35,6 +36,12 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%i", [indexPath row]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PasteDetailView *pdv = [[PasteDetailView alloc] init];
+    [self.navigationController pushViewController:pdv animated:YES];
 }
 
 @end

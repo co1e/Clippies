@@ -20,6 +20,7 @@
 		921AE8F717A4562B0046343A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 921AE8F517A4562B0046343A /* InfoPlist.strings */; };
 		921AE8F917A4562B0046343A /* UnnamedPasteboardApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */; };
 		921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90317A4566F0046343A /* PasteTableViewController.m */; };
+		921AE90717A458A40046343A /* PasteDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90617A458A40046343A /* PasteDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnnamedPasteboardApplicationTests.m; sourceTree = "<group>"; };
 		921AE90217A4566F0046343A /* PasteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteTableViewController.h; sourceTree = "<group>"; };
 		921AE90317A4566F0046343A /* PasteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteTableViewController.m; sourceTree = "<group>"; };
+		921AE90517A458A40046343A /* PasteDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteDetailView.h; sourceTree = "<group>"; };
+		921AE90617A458A40046343A /* PasteDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				921AE8DA17A4562B0046343A /* Supporting Files */,
 				921AE90217A4566F0046343A /* PasteTableViewController.h */,
 				921AE90317A4566F0046343A /* PasteTableViewController.m */,
+				921AE90517A458A40046343A /* PasteDetailView.h */,
+				921AE90617A458A40046343A /* PasteDetailView.m */,
 			);
 			path = UnnamedPasteboardApplication;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */,
 				921AE8E417A4562B0046343A /* AppDelegate.m in Sources */,
 				921AE8E017A4562B0046343A /* main.m in Sources */,
+				921AE90717A458A40046343A /* PasteDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
