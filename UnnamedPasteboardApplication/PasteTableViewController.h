@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PasteTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
-
+@interface PasteTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+{
+    UIImagePickerController *ipc;
+}
 @end

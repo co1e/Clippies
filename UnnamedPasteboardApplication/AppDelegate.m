@@ -17,7 +17,7 @@
     // Override point for customization after application launch.
     PasteTableViewController *ptvc = [[PasteTableViewController alloc] init];
     UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:ptvc];
-
+    self.window.tintColor = [UIColor redColor];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = unc;
     [self.window makeKeyAndVisible];

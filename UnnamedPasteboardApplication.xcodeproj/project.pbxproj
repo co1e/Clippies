@@ -21,6 +21,9 @@
 		921AE8F917A4562B0046343A /* UnnamedPasteboardApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */; };
 		921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90317A4566F0046343A /* PasteTableViewController.m */; };
 		921AE90717A458A40046343A /* PasteDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90617A458A40046343A /* PasteDetailView.m */; };
+		921AE90A17A45A530046343A /* PasteStringStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90917A45A530046343A /* PasteStringStore.m */; };
+		921AE90D17A4728D0046343A /* PasteImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90C17A4728D0046343A /* PasteImageStore.m */; };
+		921AE91017A4C6A50046343A /* PasteContainingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90F17A4C6A50046343A /* PasteContainingItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		921AE90317A4566F0046343A /* PasteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteTableViewController.m; sourceTree = "<group>"; };
 		921AE90517A458A40046343A /* PasteDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteDetailView.h; sourceTree = "<group>"; };
 		921AE90617A458A40046343A /* PasteDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteDetailView.m; sourceTree = "<group>"; };
+		921AE90817A45A520046343A /* PasteStringStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteStringStore.h; sourceTree = "<group>"; };
+		921AE90917A45A530046343A /* PasteStringStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteStringStore.m; sourceTree = "<group>"; };
+		921AE90B17A4728D0046343A /* PasteImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteImageStore.h; sourceTree = "<group>"; };
+		921AE90C17A4728D0046343A /* PasteImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteImageStore.m; sourceTree = "<group>"; };
+		921AE90E17A4C6A50046343A /* PasteContainingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteContainingItem.h; sourceTree = "<group>"; };
+		921AE90F17A4C6A50046343A /* PasteContainingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteContainingItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,12 @@
 				921AE90317A4566F0046343A /* PasteTableViewController.m */,
 				921AE90517A458A40046343A /* PasteDetailView.h */,
 				921AE90617A458A40046343A /* PasteDetailView.m */,
+				921AE90817A45A520046343A /* PasteStringStore.h */,
+				921AE90917A45A530046343A /* PasteStringStore.m */,
+				921AE90B17A4728D0046343A /* PasteImageStore.h */,
+				921AE90C17A4728D0046343A /* PasteImageStore.m */,
+				921AE90E17A4C6A50046343A /* PasteContainingItem.h */,
+				921AE90F17A4C6A50046343A /* PasteContainingItem.m */,
 			);
 			path = UnnamedPasteboardApplication;
 			sourceTree = "<group>";
@@ -250,9 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */,
+				921AE91017A4C6A50046343A /* PasteContainingItem.m in Sources */,
 				921AE8E417A4562B0046343A /* AppDelegate.m in Sources */,
+				921AE90A17A45A530046343A /* PasteStringStore.m in Sources */,
 				921AE8E017A4562B0046343A /* main.m in Sources */,
 				921AE90717A458A40046343A /* PasteDetailView.m in Sources */,
+				921AE90D17A4728D0046343A /* PasteImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
