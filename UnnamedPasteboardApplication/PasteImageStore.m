@@ -41,18 +41,18 @@
 
 - (UIImage *)imageForKey:(NSString *)s
 {
-    UIImage * result = [dictionary objectForKey:s];
-    if (!result)
+    UIImage * theImageForTheKey = [dictionary objectForKey:s];
+    if (!theImageForTheKey)
     {
-        result = [UIImage imageWithContentsOfFile:[self imagePathForKey:s]];
+        theImageForTheKey = [UIImage imageWithContentsOfFile:[self imagePathForKey:s]];
         
-        if (result) {
-            [dictionary setObject:result forKey:s];
+        if (theImageForTheKey) {
+            [dictionary setObject:theImageForTheKey forKey:s];
         } else {
             NSLog(@"Error: unable to find %@", [self imagePathForKey:s]);
         }
     }
-    return result;
+    return theImageForTheKey;
 }
 
 - (NSString *)imagePathForKey:(NSString *)key

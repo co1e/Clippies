@@ -7,10 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+@class Pastes;
 
 @interface PasteStringStore : NSObject
+{
+    NSManagedObjectContext *context;
+    NSManagedObjectModel *model;
+}
 @property (strong, nonatomic) NSMutableArray * allPastes;
 
 + (PasteStringStore *)sharedStore;
-- (void)addPaste:(NSString *)paste;
+- (Pastes *)createPaste;
+- (void)loadAllPastes;
+- (NSString *)pasteArchivePath;
+- (void)addImageData:(NSString *)imgKey;
+- (BOOL)saveChanges;
 @end

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ImageData" syncable="YES">
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageKey" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pastes" inverseName="relationship" inverseEntity="Pastes" syncable="YES"/>
+    </entity>
+    <entity name="Pastes" representedClassName="Pastes" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imageKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pasteID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="stringData" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlData" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="relationship" inverseEntity="ImageData" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ImageData" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Pastes" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

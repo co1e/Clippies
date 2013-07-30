@@ -10,18 +10,22 @@
 #import "PasteDetailView.h"
 #import "PasteStringStore.h"
 #import "PasteImageStore.h"
+#import "Pastes.h"
 
 @implementation PasteTableViewController
 
 - (id)init {
     self = [super init];
     if (self) {
-        UIPasteboard *gpb = [UIPasteboard generalPasteboard];
-        NSLog(@"Item currently on pasteboard: %@", [gpb string]);
-        for (int i = 0; i <= 100; ++i) {
-            [[PasteStringStore sharedStore] addPaste:[gpb string]];
-        }
-        self.navigationItem.title = @"Clipboard";
+//        UIPasteboard *gpb = [UIPasteboard generalPasteboard];
+//        NSLog(@"Item currently on pasteboard: %@", gpb.string);
+//        for (int i = 0; i <= 100; ++i) {
+//            Pastes *p = [[PasteStringStore sharedStore] createPaste];
+//            [p setStringData:gpb.string];
+//            [p setImageKey:nil];
+//            [p setPasteID:0];
+//        }
+        self.navigationItem.title = @"Pasties";
         
         UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addOwnPaste:)];
         
@@ -46,6 +50,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Pastes *p = [[[PasteStringStore sharedStore] allPastes] objectAtIndex:[indexPath row]];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     
     if (!cell)
@@ -53,9 +59,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[[PasteStringStore sharedStore] allPastes] objectAtIndex:[indexPath row]]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [p stringData]];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:18.0];
+    cell.imageView.image = [UIImage imageNamed:@"srslyfuckbirds.jpg"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,6 +103,8 @@
     [[PasteImageStore sharedStore] setImage:[info valueForKey:UIImagePickerControllerOriginalImage] forKey:idString];
     NSLog(@"Do we have an image? %@", [[PasteImageStore sharedStore] imageForKey:idString]);
 //    NSLog(@"%@", [info valueForKey:UIImagePickerControllerOriginalImage]);
+    [[PasteStringStore sharedStore] addImageData:idString];
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
