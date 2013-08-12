@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92047BB817A5784E00466FA0 /* srslyfuckbirds.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92047BB717A5784E00466FA0 /* srslyfuckbirds.jpg */; };
 		921AE8D417A4562B0046343A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D317A4562B0046343A /* Foundation.framework */; };
 		921AE8D617A4562B0046343A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D517A4562B0046343A /* CoreGraphics.framework */; };
 		921AE8D817A4562B0046343A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D717A4562B0046343A /* UIKit.framework */; };
@@ -22,12 +21,14 @@
 		921AE8F917A4562B0046343A /* UnnamedPasteboardApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */; };
 		921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90317A4566F0046343A /* PasteTableViewController.m */; };
 		921AE90717A458A40046343A /* PasteDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90617A458A40046343A /* PasteDetailView.m */; };
-		921AE90A17A45A530046343A /* PasteStringStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90917A45A530046343A /* PasteStringStore.m */; };
-		921AE90D17A4728D0046343A /* PasteImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90C17A4728D0046343A /* PasteImageStore.m */; };
-		9294436817A74E7F009C06F0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9294436717A74E7F009C06F0 /* MainViewController.m */; };
-		9294436B17A754AB009C06F0 /* Pastes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9294436A17A754AB009C06F0 /* Pastes.m */; };
+		921AE90A17A45A530046343A /* PasteCoordinatingStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 921AE90917A45A530046343A /* PasteCoordinatingStore.m */; };
+		92208BCF17B1B89200F9BF62 /* ClippingsSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92208BCE17B1B89200F9BF62 /* ClippingsSettingsView.m */; };
+		92311FFA17B3F9DA00068BAA /* Paste.m in Sources */ = {isa = PBXBuildFile; fileRef = 92311FF917B3F9DA00068BAA /* Paste.m */; };
+		9236E8CB17B4848F008B1CC5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929D097217A6049600A29BBC /* CoreData.framework */; };
+		9262E5FD17A8B425003D9BE9 /* CustomPasteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262E5FC17A8B425003D9BE9 /* CustomPasteCell.m */; };
+		9279495717AD64400021E35C /* PasteMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9279495617AD64400021E35C /* PasteMainTableViewController.m */; };
 		929D097117A603CD00A29BBC /* PasteApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 929D096F17A603CD00A29BBC /* PasteApp.xcdatamodeld */; };
-		929D097317A6049600A29BBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929D097217A6049600A29BBC /* CoreData.framework */; };
+		92D77A3717AF5B3A00020851 /* PasteImageDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D77A3617AF5B3A00020851 /* PasteImageDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,37 +42,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		92047BB717A5784E00466FA0 /* srslyfuckbirds.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = srslyfuckbirds.jpg; sourceTree = "<group>"; };
-		921AE8D017A4562B0046343A /* UnnamedPasteboardApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnnamedPasteboardApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		921AE8D017A4562B0046343A /* Clippings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clippings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921AE8D317A4562B0046343A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		921AE8D517A4562B0046343A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		921AE8D717A4562B0046343A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		921AE8DB17A4562B0046343A /* UnnamedPasteboardApplication-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnnamedPasteboardApplication-Info.plist"; sourceTree = "<group>"; };
+		921AE8DB17A4562B0046343A /* Clippings-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Clippings-Info.plist"; sourceTree = "<group>"; };
 		921AE8DD17A4562B0046343A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		921AE8DF17A4562B0046343A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		921AE8E117A4562B0046343A /* UnnamedPasteboardApplication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnnamedPasteboardApplication-Prefix.pch"; sourceTree = "<group>"; };
+		921AE8E117A4562B0046343A /* Clippings-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clippings-Prefix.pch"; sourceTree = "<group>"; };
 		921AE8E217A4562B0046343A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		921AE8E317A4562B0046343A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		921AE8E517A4562B0046343A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		921AE8EB17A4562B0046343A /* UnnamedPasteboardApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnnamedPasteboardApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		921AE8EB17A4562B0046343A /* ClippingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClippingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		921AE8EC17A4562B0046343A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		921AE8F417A4562B0046343A /* UnnamedPasteboardApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnnamedPasteboardApplicationTests-Info.plist"; sourceTree = "<group>"; };
+		921AE8F417A4562B0046343A /* ClippingsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClippingsTests-Info.plist"; sourceTree = "<group>"; };
 		921AE8F617A4562B0046343A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		921AE8F817A4562B0046343A /* UnnamedPasteboardApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnnamedPasteboardApplicationTests.m; sourceTree = "<group>"; };
 		921AE90217A4566F0046343A /* PasteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteTableViewController.h; sourceTree = "<group>"; };
 		921AE90317A4566F0046343A /* PasteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteTableViewController.m; sourceTree = "<group>"; };
 		921AE90517A458A40046343A /* PasteDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteDetailView.h; sourceTree = "<group>"; };
 		921AE90617A458A40046343A /* PasteDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteDetailView.m; sourceTree = "<group>"; };
-		921AE90817A45A520046343A /* PasteStringStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteStringStore.h; sourceTree = "<group>"; };
-		921AE90917A45A530046343A /* PasteStringStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteStringStore.m; sourceTree = "<group>"; };
-		921AE90B17A4728D0046343A /* PasteImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteImageStore.h; sourceTree = "<group>"; };
-		921AE90C17A4728D0046343A /* PasteImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteImageStore.m; sourceTree = "<group>"; };
-		9294436617A74E7F009C06F0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		9294436717A74E7F009C06F0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		9294436917A754AB009C06F0 /* Pastes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pastes.h; sourceTree = "<group>"; };
-		9294436A17A754AB009C06F0 /* Pastes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pastes.m; sourceTree = "<group>"; };
+		921AE90817A45A520046343A /* PasteCoordinatingStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteCoordinatingStore.h; sourceTree = "<group>"; };
+		921AE90917A45A530046343A /* PasteCoordinatingStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteCoordinatingStore.m; sourceTree = "<group>"; };
+		92208BCD17B1B89200F9BF62 /* ClippingsSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClippingsSettingsView.h; sourceTree = "<group>"; };
+		92208BCE17B1B89200F9BF62 /* ClippingsSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClippingsSettingsView.m; sourceTree = "<group>"; };
+		92208BD017B1E13C00F9BF62 /* Clippings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Clippings.entitlements; sourceTree = "<group>"; };
+		92311FF817B3F9DA00068BAA /* Paste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paste.h; sourceTree = "<group>"; };
+		92311FF917B3F9DA00068BAA /* Paste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paste.m; sourceTree = "<group>"; };
+		9262E5FB17A8B425003D9BE9 /* CustomPasteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPasteCell.h; sourceTree = "<group>"; };
+		9262E5FC17A8B425003D9BE9 /* CustomPasteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPasteCell.m; sourceTree = "<group>"; };
+		9279495517AD64400021E35C /* PasteMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteMainTableViewController.h; sourceTree = "<group>"; };
+		9279495617AD64400021E35C /* PasteMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteMainTableViewController.m; sourceTree = "<group>"; };
 		929D097017A603CD00A29BBC /* PasteApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasteApp.xcdatamodel; sourceTree = "<group>"; };
 		929D097217A6049600A29BBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		92D77A3517AF5B3A00020851 /* PasteImageDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteImageDetailView.h; sourceTree = "<group>"; };
+		92D77A3617AF5B3A00020851 /* PasteImageDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteImageDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929D097317A6049600A29BBC /* CoreData.framework in Frameworks */,
+				9236E8CB17B4848F008B1CC5 /* CoreData.framework in Frameworks */,
 				921AE8D617A4562B0046343A /* CoreGraphics.framework in Frameworks */,
 				921AE8D817A4562B0046343A /* UIKit.framework in Frameworks */,
 				921AE8D417A4562B0046343A /* Foundation.framework in Frameworks */,
@@ -102,7 +107,8 @@
 		921AE8C717A4562A0046343A = {
 			isa = PBXGroup;
 			children = (
-				921AE8D917A4562B0046343A /* UnnamedPasteboardApplication */,
+				92208BD017B1E13C00F9BF62 /* Clippings.entitlements */,
+				921AE8D917A4562B0046343A /* Source */,
 				921AE8F217A4562B0046343A /* UnnamedPasteboardApplicationTests */,
 				921AE8D217A4562B0046343A /* Frameworks */,
 				921AE8D117A4562B0046343A /* Products */,
@@ -112,8 +118,8 @@
 		921AE8D117A4562B0046343A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				921AE8D017A4562B0046343A /* UnnamedPasteboardApplication.app */,
-				921AE8EB17A4562B0046343A /* UnnamedPasteboardApplicationTests.xctest */,
+				921AE8D017A4562B0046343A /* Clippings.app */,
+				921AE8EB17A4562B0046343A /* ClippingsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,38 +136,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		921AE8D917A4562B0046343A /* UnnamedPasteboardApplication */ = {
+		921AE8D917A4562B0046343A /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				921AE8E217A4562B0046343A /* AppDelegate.h */,
 				921AE8E317A4562B0046343A /* AppDelegate.m */,
+				92208BCD17B1B89200F9BF62 /* ClippingsSettingsView.h */,
+				92208BCE17B1B89200F9BF62 /* ClippingsSettingsView.m */,
+				9262E5FB17A8B425003D9BE9 /* CustomPasteCell.h */,
+				9262E5FC17A8B425003D9BE9 /* CustomPasteCell.m */,
 				921AE8E517A4562B0046343A /* Images.xcassets */,
-				92047BB717A5784E00466FA0 /* srslyfuckbirds.jpg */,
-				921AE8DA17A4562B0046343A /* Supporting Files */,
-				921AE90217A4566F0046343A /* PasteTableViewController.h */,
-				921AE90317A4566F0046343A /* PasteTableViewController.m */,
+				92311FF817B3F9DA00068BAA /* Paste.h */,
+				92311FF917B3F9DA00068BAA /* Paste.m */,
+				929D096F17A603CD00A29BBC /* PasteApp.xcdatamodeld */,
+				921AE90817A45A520046343A /* PasteCoordinatingStore.h */,
+				921AE90917A45A530046343A /* PasteCoordinatingStore.m */,
 				921AE90517A458A40046343A /* PasteDetailView.h */,
 				921AE90617A458A40046343A /* PasteDetailView.m */,
-				921AE90817A45A520046343A /* PasteStringStore.h */,
-				921AE90917A45A530046343A /* PasteStringStore.m */,
-				921AE90B17A4728D0046343A /* PasteImageStore.h */,
-				921AE90C17A4728D0046343A /* PasteImageStore.m */,
-				929D096F17A603CD00A29BBC /* PasteApp.xcdatamodeld */,
-				9294436917A754AB009C06F0 /* Pastes.h */,
-				9294436A17A754AB009C06F0 /* Pastes.m */,
-				9294436617A74E7F009C06F0 /* MainViewController.h */,
-				9294436717A74E7F009C06F0 /* MainViewController.m */,
+				92D77A3517AF5B3A00020851 /* PasteImageDetailView.h */,
+				92D77A3617AF5B3A00020851 /* PasteImageDetailView.m */,
+				9279495517AD64400021E35C /* PasteMainTableViewController.h */,
+				9279495617AD64400021E35C /* PasteMainTableViewController.m */,
+				921AE90217A4566F0046343A /* PasteTableViewController.h */,
+				921AE90317A4566F0046343A /* PasteTableViewController.m */,
+				921AE8DA17A4562B0046343A /* Supporting Files */,
 			);
+			name = Source;
 			path = UnnamedPasteboardApplication;
 			sourceTree = "<group>";
 		};
 		921AE8DA17A4562B0046343A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				921AE8DB17A4562B0046343A /* UnnamedPasteboardApplication-Info.plist */,
+				921AE8DB17A4562B0046343A /* Clippings-Info.plist */,
 				921AE8DC17A4562B0046343A /* InfoPlist.strings */,
 				921AE8DF17A4562B0046343A /* main.m */,
-				921AE8E117A4562B0046343A /* UnnamedPasteboardApplication-Prefix.pch */,
+				921AE8E117A4562B0046343A /* Clippings-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -178,7 +188,7 @@
 		921AE8F317A4562B0046343A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				921AE8F417A4562B0046343A /* UnnamedPasteboardApplicationTests-Info.plist */,
+				921AE8F417A4562B0046343A /* ClippingsTests-Info.plist */,
 				921AE8F517A4562B0046343A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -187,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		921AE8CF17A4562B0046343A /* UnnamedPasteboardApplication */ = {
+		921AE8CF17A4562B0046343A /* Clippings */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 921AE8FC17A4562B0046343A /* Build configuration list for PBXNativeTarget "UnnamedPasteboardApplication" */;
+			buildConfigurationList = 921AE8FC17A4562B0046343A /* Build configuration list for PBXNativeTarget "Clippings" */;
 			buildPhases = (
 				921AE8CC17A4562B0046343A /* Sources */,
 				921AE8CD17A4562B0046343A /* Frameworks */,
@@ -199,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = UnnamedPasteboardApplication;
+			name = Clippings;
 			productName = UnnamedPasteboardApplication;
-			productReference = 921AE8D017A4562B0046343A /* UnnamedPasteboardApplication.app */;
+			productReference = 921AE8D017A4562B0046343A /* Clippings.app */;
 			productType = "com.apple.product-type.application";
 		};
-		921AE8EA17A4562B0046343A /* UnnamedPasteboardApplicationTests */ = {
+		921AE8EA17A4562B0046343A /* ClippingsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 921AE8FF17A4562B0046343A /* Build configuration list for PBXNativeTarget "UnnamedPasteboardApplicationTests" */;
+			buildConfigurationList = 921AE8FF17A4562B0046343A /* Build configuration list for PBXNativeTarget "ClippingsTests" */;
 			buildPhases = (
 				921AE8E717A4562B0046343A /* Sources */,
 				921AE8E817A4562B0046343A /* Frameworks */,
@@ -217,9 +227,9 @@
 			dependencies = (
 				921AE8F117A4562B0046343A /* PBXTargetDependency */,
 			);
-			name = UnnamedPasteboardApplicationTests;
+			name = ClippingsTests;
 			productName = UnnamedPasteboardApplicationTests;
-			productReference = 921AE8EB17A4562B0046343A /* UnnamedPasteboardApplicationTests.xctest */;
+			productReference = 921AE8EB17A4562B0046343A /* ClippingsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -231,12 +241,20 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = co1e;
 				TargetAttributes = {
+					921AE8CF17A4562B0046343A = {
+						DevelopmentTeam = NPLBA5ECEM;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					921AE8EA17A4562B0046343A = {
 						TestTargetID = 921AE8CF17A4562B0046343A;
 					};
 				};
 			};
-			buildConfigurationList = 921AE8CB17A4562B0046343A /* Build configuration list for PBXProject "UnnamedPasteboardApplication" */;
+			buildConfigurationList = 921AE8CB17A4562B0046343A /* Build configuration list for PBXProject "Clippings" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -248,8 +266,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				921AE8CF17A4562B0046343A /* UnnamedPasteboardApplication */,
-				921AE8EA17A4562B0046343A /* UnnamedPasteboardApplicationTests */,
+				921AE8CF17A4562B0046343A /* Clippings */,
+				921AE8EA17A4562B0046343A /* ClippingsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,7 +277,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92047BB817A5784E00466FA0 /* srslyfuckbirds.jpg in Resources */,
 				921AE8DE17A4562B0046343A /* InfoPlist.strings in Resources */,
 				921AE8E617A4562B0046343A /* Images.xcassets in Resources */,
 			);
@@ -280,15 +297,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9262E5FD17A8B425003D9BE9 /* CustomPasteCell.m in Sources */,
 				921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */,
 				921AE8E417A4562B0046343A /* AppDelegate.m in Sources */,
+				92311FFA17B3F9DA00068BAA /* Paste.m in Sources */,
 				929D097117A603CD00A29BBC /* PasteApp.xcdatamodeld in Sources */,
-				9294436817A74E7F009C06F0 /* MainViewController.m in Sources */,
-				921AE90A17A45A530046343A /* PasteStringStore.m in Sources */,
+				92D77A3717AF5B3A00020851 /* PasteImageDetailView.m in Sources */,
+				9279495717AD64400021E35C /* PasteMainTableViewController.m in Sources */,
+				921AE90A17A45A530046343A /* PasteCoordinatingStore.m in Sources */,
 				921AE8E017A4562B0046343A /* main.m in Sources */,
-				9294436B17A754AB009C06F0 /* Pastes.m in Sources */,
 				921AE90717A458A40046343A /* PasteDetailView.m in Sources */,
-				921AE90D17A4728D0046343A /* PasteImageStore.m in Sources */,
+				92208BCF17B1B89200F9BF62 /* ClippingsSettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +324,7 @@
 /* Begin PBXTargetDependency section */
 		921AE8F117A4562B0046343A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 921AE8CF17A4562B0046343A /* UnnamedPasteboardApplication */;
+			target = 921AE8CF17A4562B0046343A /* Clippings */;
 			targetProxy = 921AE8F017A4562B0046343A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -344,6 +363,8 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -382,6 +403,8 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -405,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CODE_SIGN_ENTITLEMENTS = Clippings.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnnamedPasteboardApplication/UnnamedPasteboardApplication-Prefix.pch";
-				INFOPLIST_FILE = "UnnamedPasteboardApplication/UnnamedPasteboardApplication-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "UnnamedPasteboardApplication/Clippings-Prefix.pch";
+				INFOPLIST_FILE = "UnnamedPasteboardApplication/Clippings-Info.plist";
+				PRODUCT_NAME = Clippings;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -418,10 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CODE_SIGN_ENTITLEMENTS = Clippings.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnnamedPasteboardApplication/UnnamedPasteboardApplication-Prefix.pch";
-				INFOPLIST_FILE = "UnnamedPasteboardApplication/UnnamedPasteboardApplication-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "UnnamedPasteboardApplication/Clippings-Prefix.pch";
+				INFOPLIST_FILE = "UnnamedPasteboardApplication/Clippings-Info.plist";
+				PRODUCT_NAME = Clippings;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -441,8 +470,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "UnnamedPasteboardApplicationTests/UnnamedPasteboardApplicationTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "UnnamedPasteboardApplicationTests/ClippingsTests-Info.plist";
+				PRODUCT_NAME = ClippingsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -459,8 +488,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UnnamedPasteboardApplication/UnnamedPasteboardApplication-Prefix.pch";
-				INFOPLIST_FILE = "UnnamedPasteboardApplicationTests/UnnamedPasteboardApplicationTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "UnnamedPasteboardApplicationTests/ClippingsTests-Info.plist";
+				PRODUCT_NAME = ClippingsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -469,7 +498,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		921AE8CB17A4562B0046343A /* Build configuration list for PBXProject "UnnamedPasteboardApplication" */ = {
+		921AE8CB17A4562B0046343A /* Build configuration list for PBXProject "Clippings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				921AE8FA17A4562B0046343A /* Debug */,
@@ -478,7 +507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		921AE8FC17A4562B0046343A /* Build configuration list for PBXNativeTarget "UnnamedPasteboardApplication" */ = {
+		921AE8FC17A4562B0046343A /* Build configuration list for PBXNativeTarget "Clippings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				921AE8FD17A4562B0046343A /* Debug */,
@@ -487,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		921AE8FF17A4562B0046343A /* Build configuration list for PBXNativeTarget "UnnamedPasteboardApplicationTests" */ = {
+		921AE8FF17A4562B0046343A /* Build configuration list for PBXNativeTarget "ClippingsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				921AE90017A4562B0046343A /* Debug */,

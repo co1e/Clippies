@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:UnnamedPasteboardApplication.xcodeproj">
+      location = "self:Clippings.xcodeproj">
    </FileRef>
 </Workspace>

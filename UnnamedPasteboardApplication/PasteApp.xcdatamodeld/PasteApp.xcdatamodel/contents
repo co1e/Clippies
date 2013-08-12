@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="ImageData" syncable="YES">
-        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="imageKey" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pastes" inverseName="relationship" inverseEntity="Pastes" syncable="YES"/>
+    <entity name="Folder" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paste" inverseName="folder" inverseEntity="Paste" syncable="YES"/>
     </entity>
-    <entity name="Pastes" representedClassName="Pastes" syncable="YES">
+    <entity name="Group" syncable="YES">
+        <attribute name="groupid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paste" inverseName="group" inverseEntity="Paste" syncable="YES"/>
+    </entity>
+    <entity name="Paste" representedClassName="Paste" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="imageKey" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="pasteID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="stringData" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="urlData" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="relationship" inverseEntity="ImageData" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="folder" inverseEntity="Folder" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="group" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ImageData" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Pastes" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Folder" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Paste" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Group" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
