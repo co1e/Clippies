@@ -1,16 +1,20 @@
 //
-//  PasteMainTableViewController.m
+//  TACHomeTableViewController.h
 //  UnnamedPasteboardApplication
 //
 //  Created by Thomas Cole on 8/3/13.
 //  Copyright (c) 2013 co1e. All rights reserved.
 //
 
-#import "PasteMainTableViewController.h"
+#import "TACHomeTableViewController.h"
 #import "PasteTableViewController.h"
 #import "PasteCoordinatingStore.h"
+#import "TACMoveToFolderViewController.h"
+//#import "ClippingsSettingsView.h"
+#import "TACCollectionViewController.h"
+#import "TACSettingsView.h"
 
-@implementation PasteMainTableViewController
+@implementation TACHomeTableViewController
 
 - (id)init
 {
@@ -21,17 +25,25 @@
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        [[self navigationItem] setTitle:@"Home"];
-        [[self navigationItem] setRightBarButtonItem:[self editButtonItem]];
-        [[self navigationController] setToolbarHidden:NO];
+        self.navigationItem.title = @"Home";
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+        self.view.tintColor = [UIColor redColor];
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    UIBarButtonItem *settingsBtn = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(presentSettingsView:)];
+    settingsBtn.tintColor = [UIColor redColor];
+    [self setToolbarItems:[NSArray arrayWithObjects:settingsBtn, nil] animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [[self navigationController] setToolbarHidden:NO animated:YES];
+    //    self.navigationController.toolbarItems = [NSArray arrayWithObject:settingsBtn];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -63,7 +75,7 @@
     NSString *sectionTitle = [[NSString alloc] init];
 
     if (section == 1) {
-        sectionTitle = @"Projects";
+        sectionTitle = @"Folders";
     }
     
     return sectionTitle;
@@ -80,6 +92,12 @@
     }
 }
 
+- (void)addFolder:(id)sender
+{
+    TACMoveToFolderViewController *afvc = [[TACMoveToFolderViewController alloc] init];
+    [[self navigationController] pushViewController:afvc animated:YES];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
@@ -94,6 +112,10 @@
         cell.textLabel.text = [NSString stringWithFormat:@"%@", [[[[PasteCoordinatingStore sharedStore] allFolders] objectAtIndex:indexPath.row] valueForKey:@"name"]];
     }
     
+    if ([tableView isEditing] == YES) {
+        NSLog(@"Is editing.");
+    }
+    
     cell.textLabel.font = [UIFont fontWithName:@"Avenir-Light" size:18.0];
     
     return cell;
@@ -102,9 +124,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0 && indexPath.section == 0) {
-        PasteTableViewController *ptvc = [[PasteTableViewController alloc] init];
-        [[self navigationController] pushViewController:ptvc animated:YES];
+//        PasteTableViewController *ptvc = [[PasteTableViewController alloc] init];
+        UICollectionViewFlowLayout *cvfl = [[UICollectionViewFlowLayout alloc] init];
+        cvfl.minimumLineSpacing = 5.0f;
+        cvfl.minimumInteritemSpacing = 10.0f;
+
+        TACCollectionViewController *tac = [[TACCollectionViewController alloc] initWithCollectionViewLayout:cvfl];
+        [[self navigationController] pushViewController:tac animated:YES];
     }
+}
+
+- (void)presentSettingsView:(id)sender
+{
+    TACSettingsView *settings = [[TACSettingsView alloc] init];
+//    [[self navigationController] pushViewController:settings animated:YES];
+    [settings setModalPresentationStyle:UIModalPresentationCurrentContext];
+    [settings setProvidesPresentationContextTransitionStyle:YES];
+    [self presentViewController:settings animated:YES completion:nil];
 }
 
 @end

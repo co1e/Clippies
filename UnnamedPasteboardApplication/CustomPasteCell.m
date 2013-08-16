@@ -12,18 +12,18 @@
 @implementation CustomPasteCell
 @synthesize textLabel;
 @synthesize imageView;
-@synthesize containerView;
-//@synthesize copiedLabel;
-//@synthesize dateCreatedLabel;
+@synthesize containerView, backgroundImage;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        containerView = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.origin.x, 8, self.bounds.size.width - 15, 60)];
-        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.origin.x + 15, 0, self.bounds.size.width - 15, 60)];
-        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.origin.x + 15, 0, self.bounds.size.width - 15, 60)];
-
+        CGRect containerViewFrame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
+        containerView = [[UIView alloc] initWithFrame:containerViewFrame];
+        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, containerView.bounds.size.width, containerView.bounds.size.height)];
+        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, containerView.bounds.size.width, containerView.bounds.size.height)];
+        backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+        backgroundImage.image = [UIImage imageNamed:@"testbg.png"];
 //        dateCreatedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 100, 26)];
 //        dateCreatedLabel.textColor = [UIColor blackColor];
 //        [imageView setBounds:imageView.frame];
@@ -50,8 +50,12 @@
         
         [containerView clipsToBounds];
         
-        self.backgroundView = self.contentView;
+//        self.backgroundView = self.contentView;
+        self.containerView.backgroundColor = [UIColor redColor];
+//        self.textLabel.backgroundColor = [UIColor whiteColor];
+//        self.imageView.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:containerView];
+        [self.contentView addSubview:backgroundImage];
         [self.containerView addSubview:textLabel];
         [self.containerView addSubview:imageView];
     }
@@ -88,6 +92,12 @@
 {
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
+    if (selected == YES) {
+//        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor colorWithRed:0.5 green:0 blue:0 alpha:1.0];
+    } else {
+        self.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 @end

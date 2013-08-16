@@ -21,10 +21,14 @@
 @property (strong, nonatomic) NSMutableArray * allPastes;
 @property (strong, nonatomic) NSMutableArray * allFolders;
 @property (strong, nonatomic) NSMutableArray * pasteboardContents;
+@property (strong, nonatomic) NSMutableArray * imagePastes;
+@property (strong, nonatomic) NSMutableArray * textPastes;
 
 + (PasteCoordinatingStore *)sharedStore;
 - (Paste *)createPaste;
 - (void)createFolder:(NSString *)folderName;
+//- (void)loadImagePastes;
+//- (void)loadTextPastes;
 - (void)loadAllPastes;
 - (NSArray *)allFolders;
 - (void)removePaste:(Paste *)p;

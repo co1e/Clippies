@@ -10,11 +10,13 @@
 #import "PasteDetailView.h"
 #import "PasteCoordinatingStore.h"
 #import "Paste.h"
-#import "CustomPasteCell.h"
+//#import "CustomPasteCell.h"
+#import "TACPasteCell.h"
+#import "TACMoveToFolderViewController.h"
 
-#define FONT_SIZE 14.0f
-#define CELL_CONTENT_WIDTH 320.0f
-#define CELL_CONTENT_MARGIN 10.0f
+//#define FONT_SIZE 14.0f
+//#define CELL_CONTENT_WIDTH 320.0f
+//#define CELL_CONTENT_MARGIN 10.0f
 
 @interface PasteTableViewController()
 {
@@ -36,7 +38,7 @@
         self.navigationItem.title = @"Clip List";
         self.navigationItem.rightBarButtonItem = self.editButtonItem;
         
-        [[self tableView] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [[self tableView] setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
         
 //        if ([[[PasteCoordinatingStore sharedStore] allPastes] count] == 0) {
 //            [[[self view] layer] addSublayer:nil];
@@ -52,8 +54,11 @@
 {
     [super viewDidLoad];
     
-    CustomPasteCell * cell = [[CustomPasteCell alloc] init];    
-    [[self tableView] registerClass:cell.class forCellReuseIdentifier:@"CustomPasteCell"];
+    UINib *nib = [UINib nibWithNibName:@"TACPasteCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"TACPasteCell"];
+    
+//    CustomPasteCell * cell = [[CustomPasteCell alloc] init];    
+//    [[self tableView] registerClass:cell.class forCellReuseIdentifier:@"CustomPasteCell"];
     
 //    CAGradientLayer * gradient = [CAGradientLayer layer];
 //    gradient.frame = CGRectMake(0, 0, 500, 500);
@@ -89,29 +94,51 @@
     return [[[PasteCoordinatingStore sharedStore] allPastes] count];
 }
 
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    Paste *p = [[[PasteCoordinatingStore sharedStore] allPastes] objectAtIndex:[indexPath row]];
+//    
+//    CustomPasteCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CustomPasteCell"];
+//    
+//    if (!cell)
+//    {
+//        cell = [[CustomPasteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CustomPasteCell"];
+//    }
+//
+//    if ([p.type isEqualToString:@"text"]) {
+////        [cell.imageView removeFromSuperview];
+//        cell.imageView.image = nil;
+//        NSError *error;
+//        cell.textLabel.attributedText = [[NSAttributedString alloc] initWithData:p.data options:nil documentAttributes:nil error:&error];
+//    }
+//    
+//    else if ([p.type isEqualToString:@"image"])
+//    {
+//        cell.textLabel.attributedText = [[NSAttributedString alloc] initWithString:@""];
+////        [cell.textLabel removeFromSuperview];
+//        cell.imageView.image = [UIImage imageWithData:p.data];
+//    }
+//    
+//    return cell;
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Paste *p = [[[PasteCoordinatingStore sharedStore] allPastes] objectAtIndex:[indexPath row]];
+    Paste *p = [[[PasteCoordinatingStore sharedStore] allPastes] objectAtIndex:indexPath.row];
     
-    CustomPasteCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CustomPasteCell"];
+    TACPasteCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TACPasteCell"];
     
-    if (!cell)
-    {
-        cell = [[CustomPasteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CustomPasteCell"];
-    }
-
-    if ([p.type isEqualToString:@"text"]) {
-//        [cell.imageView removeFromSuperview];
-        cell.imageView.image = nil;
-        NSError *error;
-        cell.textLabel.attributedText = [[NSAttributedString alloc] initWithData:p.data options:nil documentAttributes:nil error:&error];
-    }
-    
-    else if ([p.type isEqualToString:@"image"])
-    {
-        cell.textLabel.attributedText = [[NSAttributedString alloc] initWithString:@""];
-//        [cell.textLabel removeFromSuperview];
-        cell.imageView.image = [UIImage imageWithData:p.data];
+    if (![[p.folder valueForKey:@"name"] isEqualToString:@""]) {
+        if ([p.type isEqualToString:@"text"]) {
+            cell.iv.image = nil;
+            NSError *error;
+            cell.tl.attributedText = [[NSAttributedString alloc] initWithData:p.data options:nil documentAttributes:nil error:&error];
+        }
+        else if ([p.type isEqualToString:@"image"])
+        {
+            cell.tl.attributedText = [[NSAttributedString alloc] initWithString:@""];
+            cell.iv.image = [UIImage imageWithData:p.data];
+        }
     }
     
     return cell;
@@ -234,8 +261,11 @@
 //        } else {
 //        }
 //    }
-    actSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Edit", @"Copy", @"Share", @"Open in...", nil];
+    actSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Edit", @"Copy", @"Share", @"Move To Folder", nil];
     [actSheet showInView:[self view]];
+    [[self view] setTintColor:[UIColor grayColor]];
+    [[self view] tintColorDidChange];
+//    UITableViewCell * cell = [tableView cellForRowAtIndexPath:self.tableView.indexPathForSelectedRow];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -268,6 +298,7 @@
         NSString *alertMessage = [[NSString alloc] init];
         
         NSIndexPath * selectedCellIndexPath = self.tableView.indexPathForSelectedRow;
+        
         UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:selectedCellIndexPath];
 
         if (cell.textLabel.hidden == NO) {
@@ -303,9 +334,11 @@
     }
     else if (buttonIndex == actSheet.firstOtherButtonIndex + 3) {
         // Present second action sheet.
-        UIActionSheet *as2 = [[UIActionSheet alloc] initWithTitle:@"Open in..." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Chrome", @"Safari", nil];
-        [actSheet dismissWithClickedButtonIndex:actSheet.cancelButtonIndex animated:NO];
-        [as2 showInView:self.view];
+//        UIActionSheet *as2 = [[UIActionSheet alloc] initWithTitle:@"Open in..." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Chrome", @"Safari", nil];
+//        [actSheet dismissWithClickedButtonIndex:actSheet.cancelButtonIndex animated:NO];
+//        [as2 showInView:self.view];
+        TACMoveToFolderViewController *afvc = [[TACMoveToFolderViewController alloc] init];
+        [self.navigationController pushViewController:afvc animated:YES];
     }
 }
 

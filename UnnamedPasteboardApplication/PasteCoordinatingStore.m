@@ -10,7 +10,7 @@
 #import "Paste.h"
 
 @implementation PasteCoordinatingStore
-@synthesize allPastes, allFolders;
+@synthesize allPastes, allFolders, imagePastes, textPastes;
 
 + (id)allocWithZone:(struct _NSZone *)zone
 {
@@ -90,6 +90,32 @@
 
 #pragma mark - Methods to load up data structures
 
+//- (void)loadTextPastes
+//{
+//    if (!textPastes) {
+//        NSFetchRequest * request = [[NSFetchRequest alloc] init];
+//        NSEntityDescription * e = [[model entitiesByName] objectForKey:@"Paste"];
+//        
+//        request.entity = e;
+//        
+//        NSError *error;
+//        NSArray * result = [context executeFetchRequest:request error:&error];
+//        
+//        if (!result) {
+//            [NSException raise:@"Fetch failed" format:@"with Error: %@", error.localizedDescription];
+//        }
+//        
+//        NSArray * resultArray = [[NSMutableArray alloc] initWithArray:result];
+//        imagePastes = [[resultArray filteredArrayUsingPredicate:predicate] mutableCopy];
+//    }
+//}
+//
+//- (void)loadImagePastes
+//{
+//    if (!imagePastes) {
+//    }
+//}
+
 - (void)loadAllPastes
 {
     if (!allPastes) {
@@ -110,8 +136,23 @@
         }
         
         allPastes = [[NSMutableArray alloc] initWithArray:result];
+        
+        NSString * imageType = @"image";
+        NSString * textType = @"text";
+        
+        NSPredicate * filterForText = [NSPredicate predicateWithFormat:@"type == %@", textType];
+        NSPredicate * filterForImages = [NSPredicate predicateWithFormat:@"type == %@", imageType];
+        
+        request.predicate = filterForText;
+        result = [context executeFetchRequest:request error:&error];
+        textPastes = [[NSMutableArray alloc] initWithArray:result];
+        
+        request.predicate = filterForImages;
+        result = [context executeFetchRequest:request error:&error];
+        imagePastes = [[NSMutableArray alloc] initWithArray:result];
     }
-    NSLog(@"%@", allPastes);
+    NSLog(@"%@", imagePastes);
+//    NSLog(@"%@", textPastes);
 }
 
 - (NSArray *)allFolders
@@ -230,9 +271,6 @@
             [NSThread sleepForTimeInterval:1];
             }
     });
-    
-//    if (application.applicationState != UIApplicationStateBackground)
-//        [application endBackgroundTask:task];
 }
 
 #pragma mark - Misc

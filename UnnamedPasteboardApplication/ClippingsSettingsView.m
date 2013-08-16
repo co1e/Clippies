@@ -31,6 +31,8 @@
     UILabel *runInBackgroundLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     runInBackgroundSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
     
+    runInBackgroundLabel.text = @"Run in Background";
+    
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setRunInBackground:)];
     
     [runInBackgroundSwitch addGestureRecognizer:tgr];

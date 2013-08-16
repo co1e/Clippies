@@ -9,15 +9,20 @@
 #import "AppDelegate.h"
 #import "PasteTableViewController.h"
 #import "PasteCoordinatingStore.h"
-#import "PasteMainTableViewController.h"
+#import "TACHomeTableViewController.h"
+#import "TACCollectionViewController.h"
 
 @implementation AppDelegate
 
 - (void)loadAppearance
 {
-    NSDictionary *titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor whiteColor], [UIFont fontWithName:@"Avenir-Heavy" size:18.0], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowOffset = CGSizeMake(0, 0.25);
+    shadow.shadowColor = [UIColor colorWithRed:0.955 green:1.000 blue:0.972 alpha:.500];
+    shadow.shadowBlurRadius = 10.00f;
+    NSDictionary *titleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor colorWithRed:0.710 green:0.002 blue:0.115 alpha:1.000], [UIFont fontWithName:@"AvenirNext-Medium" size:18.0], shadow, nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, NSShadowAttributeName, nil]];
     
-    NSDictionary *bbiTitleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor lightGrayColor], [UIFont fontWithName:@"Avenir-Light" size:18.0], nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, nil]];
+    NSDictionary *bbiTitleTextAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[UIColor darkGrayColor], [UIFont fontWithName:@"AvenirNext-Regular" size:18.0], shadow, nil] forKeys:[NSArray arrayWithObjects:NSForegroundColorAttributeName, NSFontAttributeName, NSShadowAttributeName, nil]];
     
     [[UINavigationBar appearance] setTitleTextAttributes:titleTextAttributes];
     
@@ -33,16 +38,23 @@
 //    }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    PasteMainTableViewController *pmtvc = [[PasteMainTableViewController alloc] init];
-    PasteTableViewController *ptvc = [[PasteTableViewController alloc] init];
-    UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:ptvc];
+    TACHomeTableViewController *pmtvc = [[TACHomeTableViewController alloc] init];
+//    PasteTableViewController *ptvc = [[PasteTableViewController alloc] init];
+    
+    UICollectionViewFlowLayout *cvfl = [[UICollectionViewFlowLayout alloc] init];
+    cvfl.minimumLineSpacing = 5.0f;
+    cvfl.minimumInteritemSpacing = 10.0f;
+    
+    TACCollectionViewController *tacvc = [[TACCollectionViewController alloc] initWithCollectionViewLayout:cvfl];
+    UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:tacvc];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
-    unc.viewControllers = [NSArray arrayWithObjects:pmtvc, ptvc, nil];
-    unc.navigationBar.barTintColor = [UIColor darkGrayColor];
-    unc.navigationBar.translucent = NO;
-    unc.navigationBar.tintColor = [UIColor whiteColor];
+    self.window.tintColor = [UIColor colorWithRed:0.667 green:0.000 blue:0.000 alpha:1.000];
+    
+    unc.viewControllers = [NSArray arrayWithObjects:pmtvc, tacvc, nil];
+//    unc.navigationBar.barTintColor = [UIColor lightGrayColor];
+//    unc.navigationBar.translucent = YES;
     
     [self loadAppearance];
     

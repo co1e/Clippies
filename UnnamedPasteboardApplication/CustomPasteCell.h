@@ -18,6 +18,7 @@
 @property (strong, nonatomic) UILabel *textLabel;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIView * containerView;
+@property (strong, nonatomic) UIImageView *backgroundImage;
 //@property (strong, nonatomic) UILabel *copiedLabel;
 //@property (strong, nonatomic) UILabel *dateCreatedLabel;
 

@@ -1,5 +1,5 @@
 //
-//  PasteMainTableViewController.h
+//  TACHomeTableViewController.h
 //  UnnamedPasteboardApplication
 //
 //  Created by Thomas Cole on 8/3/13.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PasteMainTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TACHomeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

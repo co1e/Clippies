@@ -8,7 +8,6 @@
 
 #import "Paste.h"
 
-
 @implementation Paste
 
 @dynamic data;
@@ -18,4 +17,16 @@
 @dynamic folder;
 @dynamic group;
 
+- (void)awakeFromFetch
+{
+    [super awakeFromFetch];
+}
+
+- (void)awakeFromInsert
+{
+    [super awakeFromInsert];
+    
+    NSTimeInterval t = [[NSDate date] timeIntervalSinceReferenceDate];
+    [self setDateCreated:t];
+}
 @end

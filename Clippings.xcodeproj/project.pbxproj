@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92155F5917B9A4B60047FC1E /* TACSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92155F5817B9A4B60047FC1E /* TACSettingsView.m */; };
 		921AE8D417A4562B0046343A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D317A4562B0046343A /* Foundation.framework */; };
 		921AE8D617A4562B0046343A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D517A4562B0046343A /* CoreGraphics.framework */; };
 		921AE8D817A4562B0046343A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921AE8D717A4562B0046343A /* UIKit.framework */; };
@@ -25,10 +26,18 @@
 		92208BCF17B1B89200F9BF62 /* ClippingsSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92208BCE17B1B89200F9BF62 /* ClippingsSettingsView.m */; };
 		92311FFA17B3F9DA00068BAA /* Paste.m in Sources */ = {isa = PBXBuildFile; fileRef = 92311FF917B3F9DA00068BAA /* Paste.m */; };
 		9236E8CB17B4848F008B1CC5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929D097217A6049600A29BBC /* CoreData.framework */; };
+		92400E0E17BC897A00B02504 /* TACCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92400E0D17BC897A00B02504 /* TACCollectionViewController.m */; };
+		92400E1217BC910B00B02504 /* CustomCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92400E1117BC910B00B02504 /* CustomCVCell.xib */; };
+		92400E1517BC916400B02504 /* CustomCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92400E1417BC916400B02504 /* CustomCVCell.m */; };
 		9262E5FD17A8B425003D9BE9 /* CustomPasteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262E5FC17A8B425003D9BE9 /* CustomPasteCell.m */; };
-		9279495717AD64400021E35C /* PasteMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9279495617AD64400021E35C /* PasteMainTableViewController.m */; };
+		9279495717AD64400021E35C /* TACHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9279495617AD64400021E35C /* TACHomeTableViewController.m */; };
+		9284387317BB1A14009F645B /* TACAddFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284387217BB1A14009F645B /* TACAddFolderViewController.m */; };
 		929D097117A603CD00A29BBC /* PasteApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 929D096F17A603CD00A29BBC /* PasteApp.xcdatamodeld */; };
-		92D77A3717AF5B3A00020851 /* PasteImageDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D77A3617AF5B3A00020851 /* PasteImageDetailView.m */; };
+		92A0E1F717BD4B02007C8DD5 /* TACTextCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A0E1F617BD4B02007C8DD5 /* TACTextCollectionLayout.m */; };
+		92A0E1FA17BD4B0B007C8DD5 /* TACImageCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A0E1F917BD4B0B007C8DD5 /* TACImageCollectionLayout.m */; };
+		92EF769217B985C80030C776 /* TACPasteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92EF769117B985C80030C776 /* TACPasteCell.xib */; };
+		92EF769517B985D40030C776 /* TACPasteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EF769417B985D40030C776 /* TACPasteCell.m */; };
+		92EF769817B987E30030C776 /* TACMoveToFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EF769717B987E30030C776 /* TACMoveToFolderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92155F5717B9A4B60047FC1E /* TACSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACSettingsView.h; sourceTree = "<group>"; };
+		92155F5817B9A4B60047FC1E /* TACSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACSettingsView.m; sourceTree = "<group>"; };
 		921AE8D017A4562B0046343A /* Clippings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clippings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921AE8D317A4562B0046343A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		921AE8D517A4562B0046343A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,14 +80,28 @@
 		92208BD017B1E13C00F9BF62 /* Clippings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Clippings.entitlements; sourceTree = "<group>"; };
 		92311FF817B3F9DA00068BAA /* Paste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paste.h; sourceTree = "<group>"; };
 		92311FF917B3F9DA00068BAA /* Paste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paste.m; sourceTree = "<group>"; };
+		92400E0C17BC897A00B02504 /* TACCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACCollectionViewController.h; sourceTree = "<group>"; };
+		92400E0D17BC897A00B02504 /* TACCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACCollectionViewController.m; sourceTree = "<group>"; };
+		92400E1117BC910B00B02504 /* CustomCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCVCell.xib; sourceTree = "<group>"; };
+		92400E1317BC916400B02504 /* CustomCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCVCell.h; sourceTree = "<group>"; };
+		92400E1417BC916400B02504 /* CustomCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCVCell.m; sourceTree = "<group>"; };
 		9262E5FB17A8B425003D9BE9 /* CustomPasteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPasteCell.h; sourceTree = "<group>"; };
 		9262E5FC17A8B425003D9BE9 /* CustomPasteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPasteCell.m; sourceTree = "<group>"; };
-		9279495517AD64400021E35C /* PasteMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteMainTableViewController.h; sourceTree = "<group>"; };
-		9279495617AD64400021E35C /* PasteMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteMainTableViewController.m; sourceTree = "<group>"; };
+		9279495517AD64400021E35C /* TACHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACHomeTableViewController.h; sourceTree = "<group>"; };
+		9279495617AD64400021E35C /* TACHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACHomeTableViewController.m; sourceTree = "<group>"; };
+		9284387117BB1A14009F645B /* TACAddFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACAddFolderViewController.h; sourceTree = "<group>"; };
+		9284387217BB1A14009F645B /* TACAddFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACAddFolderViewController.m; sourceTree = "<group>"; };
 		929D097017A603CD00A29BBC /* PasteApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasteApp.xcdatamodel; sourceTree = "<group>"; };
 		929D097217A6049600A29BBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		92D77A3517AF5B3A00020851 /* PasteImageDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteImageDetailView.h; sourceTree = "<group>"; };
-		92D77A3617AF5B3A00020851 /* PasteImageDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteImageDetailView.m; sourceTree = "<group>"; };
+		92A0E1F517BD4B02007C8DD5 /* TACTextCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACTextCollectionLayout.h; sourceTree = "<group>"; };
+		92A0E1F617BD4B02007C8DD5 /* TACTextCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACTextCollectionLayout.m; sourceTree = "<group>"; };
+		92A0E1F817BD4B0B007C8DD5 /* TACImageCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACImageCollectionLayout.h; sourceTree = "<group>"; };
+		92A0E1F917BD4B0B007C8DD5 /* TACImageCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACImageCollectionLayout.m; sourceTree = "<group>"; };
+		92EF769117B985C80030C776 /* TACPasteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TACPasteCell.xib; sourceTree = "<group>"; };
+		92EF769317B985D40030C776 /* TACPasteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACPasteCell.h; sourceTree = "<group>"; };
+		92EF769417B985D40030C776 /* TACPasteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACPasteCell.m; sourceTree = "<group>"; };
+		92EF769617B987E30030C776 /* TACMoveToFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACMoveToFolderViewController.h; sourceTree = "<group>"; };
+		92EF769717B987E30030C776 /* TACMoveToFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACMoveToFolderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +168,9 @@
 				921AE8E317A4562B0046343A /* AppDelegate.m */,
 				92208BCD17B1B89200F9BF62 /* ClippingsSettingsView.h */,
 				92208BCE17B1B89200F9BF62 /* ClippingsSettingsView.m */,
+				92400E1317BC916400B02504 /* CustomCVCell.h */,
+				92400E1417BC916400B02504 /* CustomCVCell.m */,
+				92400E1117BC910B00B02504 /* CustomCVCell.xib */,
 				9262E5FB17A8B425003D9BE9 /* CustomPasteCell.h */,
 				9262E5FC17A8B425003D9BE9 /* CustomPasteCell.m */,
 				921AE8E517A4562B0046343A /* Images.xcassets */,
@@ -153,13 +181,26 @@
 				921AE90917A45A530046343A /* PasteCoordinatingStore.m */,
 				921AE90517A458A40046343A /* PasteDetailView.h */,
 				921AE90617A458A40046343A /* PasteDetailView.m */,
-				92D77A3517AF5B3A00020851 /* PasteImageDetailView.h */,
-				92D77A3617AF5B3A00020851 /* PasteImageDetailView.m */,
-				9279495517AD64400021E35C /* PasteMainTableViewController.h */,
-				9279495617AD64400021E35C /* PasteMainTableViewController.m */,
 				921AE90217A4566F0046343A /* PasteTableViewController.h */,
 				921AE90317A4566F0046343A /* PasteTableViewController.m */,
 				921AE8DA17A4562B0046343A /* Supporting Files */,
+				9284387117BB1A14009F645B /* TACAddFolderViewController.h */,
+				9284387217BB1A14009F645B /* TACAddFolderViewController.m */,
+				92400E0C17BC897A00B02504 /* TACCollectionViewController.h */,
+				92400E0D17BC897A00B02504 /* TACCollectionViewController.m */,
+				9279495517AD64400021E35C /* TACHomeTableViewController.h */,
+				9279495617AD64400021E35C /* TACHomeTableViewController.m */,
+				92EF769617B987E30030C776 /* TACMoveToFolderViewController.h */,
+				92EF769717B987E30030C776 /* TACMoveToFolderViewController.m */,
+				92EF769317B985D40030C776 /* TACPasteCell.h */,
+				92EF769417B985D40030C776 /* TACPasteCell.m */,
+				92EF769117B985C80030C776 /* TACPasteCell.xib */,
+				92155F5717B9A4B60047FC1E /* TACSettingsView.h */,
+				92155F5817B9A4B60047FC1E /* TACSettingsView.m */,
+				92A0E1F517BD4B02007C8DD5 /* TACTextCollectionLayout.h */,
+				92A0E1F617BD4B02007C8DD5 /* TACTextCollectionLayout.m */,
+				92A0E1F817BD4B0B007C8DD5 /* TACImageCollectionLayout.h */,
+				92A0E1F917BD4B0B007C8DD5 /* TACImageCollectionLayout.m */,
 			);
 			name = Source;
 			path = UnnamedPasteboardApplication;
@@ -277,6 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92EF769217B985C80030C776 /* TACPasteCell.xib in Resources */,
+				92400E1217BC910B00B02504 /* CustomCVCell.xib in Resources */,
 				921AE8DE17A4562B0046343A /* InfoPlist.strings in Resources */,
 				921AE8E617A4562B0046343A /* Images.xcassets in Resources */,
 			);
@@ -297,17 +340,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A0E1F717BD4B02007C8DD5 /* TACTextCollectionLayout.m in Sources */,
 				9262E5FD17A8B425003D9BE9 /* CustomPasteCell.m in Sources */,
 				921AE90417A4566F0046343A /* PasteTableViewController.m in Sources */,
+				92155F5917B9A4B60047FC1E /* TACSettingsView.m in Sources */,
+				92A0E1FA17BD4B0B007C8DD5 /* TACImageCollectionLayout.m in Sources */,
+				92EF769517B985D40030C776 /* TACPasteCell.m in Sources */,
 				921AE8E417A4562B0046343A /* AppDelegate.m in Sources */,
 				92311FFA17B3F9DA00068BAA /* Paste.m in Sources */,
 				929D097117A603CD00A29BBC /* PasteApp.xcdatamodeld in Sources */,
-				92D77A3717AF5B3A00020851 /* PasteImageDetailView.m in Sources */,
-				9279495717AD64400021E35C /* PasteMainTableViewController.m in Sources */,
+				92400E0E17BC897A00B02504 /* TACCollectionViewController.m in Sources */,
+				9284387317BB1A14009F645B /* TACAddFolderViewController.m in Sources */,
+				9279495717AD64400021E35C /* TACHomeTableViewController.m in Sources */,
 				921AE90A17A45A530046343A /* PasteCoordinatingStore.m in Sources */,
 				921AE8E017A4562B0046343A /* main.m in Sources */,
 				921AE90717A458A40046343A /* PasteDetailView.m in Sources */,
+				92400E1517BC916400B02504 /* CustomCVCell.m in Sources */,
 				92208BCF17B1B89200F9BF62 /* ClippingsSettingsView.m in Sources */,
+				92EF769817B987E30030C776 /* TACMoveToFolderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
